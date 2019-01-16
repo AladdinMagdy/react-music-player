@@ -1,0 +1,17 @@
+.mm-navbar {
+  display: flex;
+  background-color: #cccccc;
+  -webkit-box-shadow: 0px 10px 82px -20px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 82px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 82px -20px rgba(0, 0, 0, 0.75);
+  a {
+    color: #000000;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  .active {
+    background-color: #00ff00;
+  }
+}

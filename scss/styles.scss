@@ -1,0 +1,28 @@
+// :root {
+//   --some-color: red;
+// }
+
+// a {
+//   color: var(--some-color);
+//   display: flex;
+//   flex-direction: column-reverse;
+// }
+
+@import "../node_modules/@material/card/dist/mdc.card.css";
+@import "../node_modules/@material/button/dist/mdc.button.css";
+@import "../node_modules/@material/icon-button/dist/mdc.icon-button.css";
+@import "../node_modules/@rmwc/icon/icon.css";
+
+body {
+}
+
+.lol {
+  background-color: pink;
+}
+
+.react-h5-audio-player {
+  // Remember to use !important to overwrite inline styles.
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
