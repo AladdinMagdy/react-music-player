@@ -13,9 +13,14 @@ export default class MyDocument extends Document {
           />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css"
+          />
+          <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
           />
+
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"

@@ -99,6 +99,11 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mm-navbar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/img/aHR0cHM6Ly9zdGFnaW5nLXN0cnVjdHVyZS5tb25kaWFtZWRpYS5jb20vdjAvYXBpL2ltYWdlLzViOWZhZjI3M2M1NjMwMjI1OWIwMzEwNV84Yjg3NzgxMDFhMzdjNDc5MzQwNWQ4MWUxNjFjNTA5Yi9pbWFnZS5qcGVnO2NhNzhmOTJkMGU0ZQ==.png",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
         activeClassName: "active",
         href: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -119,12 +124,13 @@ function (_Component) {
 /*!**********************************!*\
   !*** ./components/Page/index.js ***!
   \**********************************/
-/*! exports provided: default */
+/*! exports provided: default, PageConsumer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageConsumer", function() { return PageConsumer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-h5-audio-player */ "./node_modules/react-h5-audio-player/lib/index.js");
@@ -140,18 +146,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
  // import MusicPlayer from "react-responsive-music-player";
 
 
 
+var PageContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();
 
 var Page =
 /*#__PURE__*/
@@ -159,28 +168,55 @@ function (_Component) {
   _inherits(Page, _Component);
 
   function Page() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     _classCallCheck(this, Page);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Page).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Page)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      playingRadio: null
+    });
+
+    return _this;
   }
 
   _createClass(Page, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PageContext.Provider, {
+        value: {
+          playingRadio: this.state.playingRadio,
+          showPlayingRadioUrl: function showPlayingRadioUrl(radioUrl) {
+            return _this2.setState({
+              playingRadio: radioUrl
+            });
+          }
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], null), this.props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1___default.a, {
         autoPlay: true,
-        src: "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3",
+        src: this.state.playingRadio || "",
         onPlay: function onPlay(e) {
           return console.log("onPlay");
         } // other props here
 
-      }));
+      })));
     }
   }]);
 
   return Page;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
+
+var PageConsumer = PageContext.Consumer;
 
 
 /***/ }),

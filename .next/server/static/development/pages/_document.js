@@ -153,6 +153,9 @@ function (_Document) {
         httpEquiv: "X-UA-Compatible",
         content: "ie=edge"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
         href: "https://fonts.googleapis.com/icon?family=Material+Icons",
         rel: "stylesheet"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {

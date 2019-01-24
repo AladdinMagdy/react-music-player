@@ -2,6 +2,6 @@ import React, { Component } from "react";
 
 export default class about extends Component {
   render() {
-    return <div>About Page</div>;
+    return <div className="home-page">About Page</div>;
   }
 }

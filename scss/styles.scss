@@ -13,7 +13,9 @@
 @import "../node_modules/@material/icon-button/dist/mdc.icon-button.css";
 @import "../node_modules/@rmwc/icon/icon.css";
 
+html,
 body {
+  height: 100%;
 }
 
 .lol {
@@ -25,4 +27,21 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.mm-swiper-custom {
+  width: 80%;
+}
+.mm-swiper-wrapper-custom {
+  width: 80%;
+}
+
+.home-page {
+  height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .smartComponents {
+    width: 100%;
+  }
 }

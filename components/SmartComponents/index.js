@@ -1,153 +1,97 @@
-import {
-  Card,
-  CardPrimaryAction,
-  CardMedia,
-  CardAction,
-  CardActions,
-  CardActionButtons,
-  CardActionIcons
-} from "@rmwc/card";
-
-// import { Typography } from "@rmwc/typography";
-import SmartTypography from "./SmartTypography";
-import SmartCardMedia from "./SmartCardMedia";
+import SmartCarousel from "./SmartCarousel";
+import SmartCard from "./SmartCard";
 
 import React, { Component } from "react";
 
 export default class index extends Component {
   state = {
-    template: "smart-card",
-    children: [
-      {
-        template: "cardPrimaryAction",
-        children: [
-          {
-            template: "cardMedia",
-            data: {
-              imageUrl:
-                "https://material-components-web.appspot.com/images/16-9.jpg",
-              ratio: "sixteenByNine"
-            }
-          },
-          {
-            template: "typography",
-            data: { text: "Our Changing Planet", use: "headline6", tag: "h2" }
-          },
-          {
-            template: "typography",
-            data: { text: "Our Changing Planet", use: "headline6", tag: "h2" }
-          }
-        ]
+    smart_card_key: {
+      option_1: {
+        width: "400px",
+        // width: "100px",
+        padding: "5px"
+        // padding: "2px"
       },
-      {
-        template: "cardActions",
-        children: [
+      option_2: {
+        width: "300px-500px-70px",
+        padding: "2px-5px-7px"
+      }
+    },
+
+    cards: {
+      card_1: {
+        customProperties: {
+          key: "option_1"
+        },
+        objArr: [
           {
-            template: "cardActionButtons",
-            children: [
-              {
-                template: "cardAction",
-                data: {
-                  type: "text",
-                  text: "Read"
-                }
-              },
-              {
-                template: "cardAction",
-                data: {
-                  type: "text",
-                  text: "Bookmark"
-                }
-              }
-            ]
+            template: "smart-card",
+            imgUrl: "/static/img/1.jpg",
+            title: "Radio 702",
+            subTitle:
+              "Radio 702 is a Talk format radio station broadcasting from Johannesburg, So…",
+            radioUrl: "http://18973.live.streamtheworld.com/FM702_SC",
+            currentState: "stopped"
           },
           {
-            template: "cardActionIcons",
-            children: [
-              {
-                template: "cardAction",
-                data: {
-                  type: "icon",
-                  currentState: "favorite",
-                  toggledState: "favorite_border"
-                }
-              },
-              {
-                template: "cardAction",
-                data: {
-                  type: "icon",
-                  currentState: "share"
-                }
-              },
-              {
-                template: "cardAction",
-                data: {
-                  type: "icon",
-                  currentState: "more_vert"
-                }
-              }
-            ]
+            template: "smart-card",
+            imgUrl: "/static/img/2.jpg",
+            title: "Kaya FM",
+            subTitle:
+              "Kaya FM was launched in August 1997, and was one of the first frequencies t…",
+            radioUrl: "http://iceant.antfarm.co.za:8000/Kaya_MP3",
+            currentState: "stopped"
+          },
+          {
+            template: "smart-card",
+            imgUrl: "/static/img/3.jpg",
+            title: "KFM",
+            subTitle:
+              "KFM radio is an Adult Contemporary radio station broadcasting from Cape To…"
+          },
+          {
+            template: "smart-card",
+            imgUrl: "/static/img/4.jpg",
+            title: "947",
+            subTitle:
+              "947 is a Contemporary radio station broadcasting from Johannesburg, South…"
+          },
+          {
+            template: "smart-card",
+            imgUrl: "/static/img/5.jpg",
+            title: "Cape Talk",
+            subTitle:
+              "Cape Talk is a News/Talk format radio station based in Cape Town, South Afri…"
+          },
+          {
+            template: "smart-card",
+            imgUrl: "/static/img/6.jpg",
+            title: "Jacaranda FM",
+            subTitle:
+              "Jacaranda FM is the biggest independent radio station in South Africa. It broa…"
+          },
+          {
+            template: "smart-card",
+            imgUrl: "/static/img/7.jpg",
+            title: "East Coast Radio",
+            subTitle:
+              "With over 1.6 million listeners in KZN, East Coast Radio truly is the province's…"
           }
         ]
       }
-    ]
+    }
   };
 
   render() {
-    const sampleTypo = {
-      template: "typography",
-      data: { text: "Our Changing Planet", use: "headline6", tag: "h2" }
-    };
-    const sampleCardMedia = {
-      template: "cardMedia",
-      data: {
-        imageUrl: "https://material-components-web.appspot.com/images/16-9.jpg",
-        ratio: "sixteenByNine"
-      }
-    };
-    const samplePrimaryActions = {
-      template: "cardPrimaryAction",
-      children: [
-        {
-          template: "cardMedia",
-          data: {
-            imageUrl:
-              "https://material-components-web.appspot.com/images/16-9.jpg",
-            ratio: "sixteenByNine"
-          }
-        },
-        {
-          template: "typography",
-          data: { text: "Our Changing Planet", use: "headline6", tag: "h2" }
-        },
-        {
-          template: "typography",
-          data: { text: "Our Changing Planet", use: "headline6", tag: "h2" }
-        }
-      ]
-    };
     return (
-      <div>
-        <Card style={{ width: "21rem" }}>
-          <CardPrimaryAction>
-            <SmartCardMedia data={sampleCardMedia.data} />
-            <div style={{ padding: "0 1rem 1rem 1rem" }}>
-              <SmartTypography data={sampleTypo.data} />
-            </div>
-          </CardPrimaryAction>
-          <CardActions>
-            <CardActionButtons>
-              <CardAction>Read</CardAction>
-              <CardAction>Bookmark</CardAction>
-            </CardActionButtons>
-            <CardActionIcons>
-              <CardAction onIcon="favorite" icon="favorite_border" />
-              <CardAction icon="share" />
-              <CardAction icon="more_vert" />
-            </CardActionIcons>
-          </CardActions>
-        </Card>
-      </div>
+      <SmartCarousel
+        cards={this.state.cards}
+        cardsOptions={this.state.smart_card_key}
+      >
+        {/* {this.state.cards.map((card, index) => (
+            <SmartCard key={card.title} data={card} />
+          ))} */}
+      </SmartCarousel>
     );
   }
 }
