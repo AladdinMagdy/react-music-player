@@ -25,14 +25,14 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "express": "^4.16.4",
-    "next": "^7.0.2",
+    "next": "^13.1.1",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-h5-audio-player": "^1.1.0",
     "react-id-swiper": "^1.6.8",
-    "react-responsive-music-player": "^0.3.0",
+    "react-responsive-music-player": "^0.4.3",
     "rmwc": "^4.0.6"
   }
 }
